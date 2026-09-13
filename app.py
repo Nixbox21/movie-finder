@@ -11,7 +11,7 @@ FAMILY_PIN = str(st.secrets.get("FAMILY_PIN", os.getenv("FAMILY_PIN", "1234")))
 
 pin_input = st.text_input("Enter Family PIN", type="password")
 if pin_input != FAMILY_PIN:
-    st.info("Enter your 4-digit family PIN (default: 1234) to search.")
+    st.info("Enter your 4-digit family PIN to search.")
     st.stop()
 
 def get_direct_link(provider_name, title):
@@ -50,7 +50,7 @@ my_subs = profile.get("my_subscriptions", [])
 owned_movies = [m.strip().lower() for m in profile.get("owned_movies", [])]
 
 st.title("🎬 Where to Watch")
-movie_query = st.text_input("Search a movie:", placeholder="e.g. Heat, Gladiator, Inception")
+movie_query = st.text_input("Search a movie:", placeholder="e.g. Heat, Gladiator, Shannon and Skye learn to fly")
 
 if movie_query:
     query_clean = movie_query.strip().lower()
